@@ -26,6 +26,7 @@
           for (let i = 1; i <= pdfDoc.numPages; i++) {
             const page = await pdfDoc.getPage(i);
             const content = await page.getTextContent();
+            console.log(`Page ${i} text: ${content.items.map((item) => item.str).join(" ")}`);
             const text = content.items.map((item) => item.str).join(" ");
             const regex = /\brent\b/gi;
             const matches = text.match(regex);
