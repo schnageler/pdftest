@@ -28,13 +28,13 @@
             const content = await page.getTextContent();
             console.log(`Page ${i} text: ${content.items.map((item) => item.str).join(" ")}`);
             const text = content.items.map((item) => item.str).join(" ");
-            const regex = /\brent\b/gi;
+            const regex = /\bHayes\b/gi;
             const matches = text.match(regex);
             if (matches) {
               count += matches.length;
             }
           }
-          resultDiv.textContent = `The word "rent" appears ${count} times.`;
+          resultDiv.textContent = `The word "Hayes" appears ${count} times.`;
         };
         reader.readAsArrayBuffer(file);
       });
